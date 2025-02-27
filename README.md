@@ -1,16 +1,9 @@
 
-# Welcome to your CDK Python project!
+# Welcome to my AWS Spot hosted Minecraft Server CDK Project
 
-This is a blank project for CDK development with Python.
+This is a CDK project to setup hosting a minecraft server on spot intances that will automatically turn off when nobondy is online to save costs. It also generates a website for managing the minecraft server. Primarily for personal use.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+In order to use this for yourself, first create a new venv enviroment.
 
 To manually create a virtualenv on MacOS and Linux:
 
@@ -43,9 +36,14 @@ At this point you can now synthesize the CloudFormation template for this code.
 $ cdk synth
 ```
 
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
+You can now deploy the app to your AWS account
+
+```
+$ cdk deploy
+```
+
+When this is finished running, it will output the domain name of the managment console where you turn on the server and find its IP address.
+Note that since there is no elastic IP assigned to the instance, the IP will change each time the server is turned on and off
 
 ## Useful commands
 
